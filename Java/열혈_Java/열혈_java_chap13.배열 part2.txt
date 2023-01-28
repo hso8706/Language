@@ -1,0 +1,30 @@
+*배열_part2
+
+-enhanced for문(for-each문)
+: array와 for문은 연계해서 자주 사용됨. 이를 간단하게 축약해서 표현한 것이 enhanced for문이다
+>축약 표현형
+// 일반형
+type[ ] ar = { 1, 2, 3, 4, 5 };
+for(int i = 0; i < ar.length; i++) {
+	System.out.println(ar[i]);
+}
+// 축약형
+type[ ] ar = { 1, 2, 3, 4, 5 };
+for(type e : ar) {
+	System.out.println(e);
+}
+// 해석
+: 배열 ar의 요소(참조 값)를 e에 하나씩 저장할테니, 저장한 값으로 중괄호 내용을 순차적으로 실행해라.
+: type에는 기본 자료형과 인스턴스형 모두 사용가능.
+
+-다차원 배열의 이해와 활용
+>선언
+type[ ][ ] name = new type[a][b];
+: 길이가 b인 1차원 배열을 a개 묶어서 생성.
+: name.length = a와 같음
+: name[a].length = 각 행(a)에 저장된 배열의 길이로 반환.
+>접근 및 사용
+: 1차원 배열에 접근하고 사용하기 위해 반복문을 쓰는 것처럼 2차원 배열도 반복문 사용.
+: 대신 중첩된 반복문을 사용.
+>초기화
+: 1차원 배열 초기화를 세로 줄 만큼 더하면 된다.

@@ -1,0 +1,32 @@
+*콘솔 입력과 출력
+
+-printf 메소드
+>System.out.printf (" ", );
+: 인자의 종류와 수가 다양함. (가변인자)
+>서식 지정자
+%d : 10진수 정수 형태의 출력
+%o : 8진수
+%x : 16진수
+%f : 실수의 출력
+%e : e 표기법 기반의 실수 출력 (지수 방식)
+%g : 출력의 대상에 따라서 %e 또는 %f 형태로 출력 (자동), 소수점 이하 자리에 기준을 두고 기준에 맞추어 자동 변환
+%s : 문자열 출력
+%c : 문자 하나 출력
+
+-Scanner 클래스
+: 생성자로 전달되는 대상으로부터 데이터를 추출하는 기능 제공
+: 공백을 기준으로 구분한다.
+>오버로딩(일부)
+: Scanner(File source)
+: Scanner(String source)
+: Scanner(InputStream source)
+>키보드 접근
+Scanner sc = new Scanner(System.in);
+
+-Scanner 클래스의 메소드
+>int nextInt( )
+>byte nextByte( )
+>String nextLine( )
+>double nextDouble( )
+>boolean nextBoolean )
+ 

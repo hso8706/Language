@@ -1,0 +1,42 @@
+*예외처리
+
+-예외 클래스의 구분
+: Throwable을 상속하는 3가지 대표 클래스 중 무엇을 상속하는지에 따라 구분함
+: 대표 클래스는 Error class, Exception class, RuntimeException class
+가 있다.
+>Error 클래스 상속
+>Exception 클래스 상속
+>RuntimeException 클래스 상속
+: RuntimeException 클래스는 Exception 클래스를 상속하기 때문에 RuntimeException 클래스를 상속하는 일부 예외 처리 클래스는 Exception 클래스와 유사한 점은 보이지만 성격이 다르기 때문에 구분시킨다.
+
+-Error 클래스를 상속하는 예외 클래스의 특성
+: Error 클래스를 상속하는 예외 클래스의 예외 상황은 시스템 오류 수준의 예외 상황이다.
+: 프로그램(코드) 내에서 처리할 수 있는 수준의 예외가 아님.
+: 따라서 try~catch로 예외처리를 안함(사실 못함)
+>예시
+: VirtualMachinError
+: IOError
+
+-RuntimeException 클래스를 상속하는 예외 클래스의 특성
+: Error의 클래스와 Exception 클래스의 중간 지점을 상속하는 느낌의 클래스들이다.
+: 보는 관점에 따라 다르게 볼 수 있어서 애매~한게 RuntimeException 클래스를 상속하는 예외 클래스의 특성이다.
+: 하지만 대부분은 코드를 뜯어 고쳐야하는 수준의 Error로 볼 수 있다.
+: Error 클래스를 상속하는 예외 클래스들처럼 굳이 try~catch로 예외처리를 하지 않음. 특별한 경우에만 예외처리를 함.
+
+-Exception 클래스를 상속하는 예외 클래스들의 특성
+: 프로그래머가 직접 try~catch로 처리해야할 의무가 존재하는 클래스(예외 처치를 안하면 컴파일러가 뭐라함;)
+: 앞으로 예외 처리를 공부할 때, 포커싱을 하는 부분!
+: 이 클래스들을 try~catch로 처리하지 않으면 컴파일 오류가 발생함.
+: 무조건 Exception을 처리하거나 넘겨야함.
+>대표적 예시, java.io.IOException
+
+-throws (Exception1), (Exception2), ... 
+: 예외를 넘기는 방법.
+: throws를 사용한 메소드에서 예외(exception)가 발생할 수 있지만, 해당 메소드에서 이를 처리하는 것이 아니라, 예외가 발생할 메소드를 호출한 영역으로 넘기겠다는 의미
+: main 메소드에서조차 throws를 사용하면 JVM으로 예외를 넘기고 실행하게됨.
+: 둘 이상의 Exception은 ,로 구분하여 작성하면 된다.
+
+-프로그래머가 정의하는 예외 클래스
+: 문법적인 문제(코드 문제)가 아닌 논리적인 예외가 존재할 때, 주로 프로그래머가 예외 클래스를 따로 정의함.
+: Exception을 상속하는 클래스를 만들고, 생성자에서 super를 통해 부모 클래스에 정보를 전달하는 것이 핵심
+: 

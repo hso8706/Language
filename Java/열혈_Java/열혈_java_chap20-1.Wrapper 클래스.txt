@@ -1,0 +1,45 @@
+*자바의 기본 클래스
+: 자바에서 기본적으로 제공하는 클래스
+
+-Wrapper 클래스
+: 기본 자료형 값을 인스턴스로 감싸기 위한 용도의 클래스(인스턴스화 시키는 것.)
+// 인스턴스화의 의의
+// : 인스턴스 참조 값을 매개 변수로 하는 클래스에 기본 자료형 값(자연수, 실수 등)을 전달하기 위한 매개체로 사용할 수 있다.
+>Wrapper 클래스의 종류
+: 각 클래스의 명칭은 기본 자료형의 풀네임이다
+: Integer(정수), Double(실수), Boolean, Character, Byte, Short, Long, Float
+// 사용, 접근
+// Integer name = new Integer(3);
+>Boxing, Unboxing
+: Wrapper클래스로 값을 감싸는 것이 Boxing, 값을 꺼내는 것(호출하는 것)이 Unboxing이다.
+: Unboxing을 위한 Wrapper 클래스의 메소드가 따로 정의되어 있음.
+: intValue, doubleValue, booleanValue 등 자료형명칭에 Value가 붙어있는 형식의 이름이다.
+// Unboxing의 사용
+// : Wrapper 클래스는 immutable 인스턴스이기 때문에 한 번 인스턴스를 생성하면 값을 변경할 수 없다. 하지만 Unboxing을 통해 값을 변경할 수 있다.
+// Unboxging 메소드를 통해 값을 꺼내고, 값을 변경한 후 이를 다시 인자로 전달하면 됨! (조금 번거로움)
+
+-오토 박싱과 오토 언박싱
+: Boxing과 Unboxing을 자동으로 해결해줌
+>오토 박싱, 오토 언박싱 진행 가능 조건
+: 대입 연산자(=)를 기준으로 생각할 것.
+1. 인스턴스가 와야할 때, 기본 자료형 값이 왔을 경우. (오토 박싱)
+2. 기본 자료형의 값이 와야 할 때, 인스턴스가 올 경우. (오토 언박싱)
+>오토 박싱과 오토 언박싱의 광범위한 사용
+: 예로, Integer num = 10; 일 때, num++; 혹은 num += 3; 같은 계산이 가능함. (오토 박싱과 오토 언박싱이 동시에 진행됨)
+: 하지만 주로 쓰이진 않음. 컴파일러가 자동으로 해주는 것은 눈에 잘 안띄기도 하고, 안정성에 대한 의심이 들 수도 있기 때문
+
+-Number 클래스
+: 모든 Wrapper클래스가 상속하는 클래스
+: 추상 메소드가 정의된 추상 클래스이다.
+: intValue(), longValue(), doubleValue() 등의 추상 메소드가 있음.
+: 따라서, 이를 상속하는 Wrapper 클래스에서 전부 구현해주어야 한다.
+// 이같은 이유 때문에 각각의 Wrapper 클래스에서 Unboxing을 진행할 때, 필요에 따라 다른 기본 자료형 값으로 언박싱(반환)할 수 있다.
+
+-Wrapper 클래스의 다양한 static 메소드들
+>valueOf 메소드
+: .valueOf(data); data를 선언한 참조 형에 맞춰서 인스턴스를 생성.
+: new와 인스턴스 생성 선언을 대신해주는 메소드이다.
+>max, min, sum 메소드 / 매개 변수 (n1, n2)
+: 각각 대소비교와 합을 구현하는 메소드	
+>toBinaryString, toOctalString, toHexString / 매개 변수 (num)
+: 각각 2진수, 8진수, 16진수의 결과로 변환한 String형태의 값을 반환함.

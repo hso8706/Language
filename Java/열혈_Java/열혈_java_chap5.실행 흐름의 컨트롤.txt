@@ -1,0 +1,28 @@
+*실행 흐름의 컨트롤
+
+-조건문 ( if )
+: 기존에 알던 내용과 똑같음.
+>(조건) ? (수1) : (수2)
+// 조건 -> true or false
+// 수1 -> true 시 반환
+// 수2 -> false 시 반환
+
+-switch문
+: 알던 것과 똑같음. break도 사용.
+>기본 구성
+swich(n) {
+case 1:
+...
+default:
+}
+
+-반복문 ( for, while, do~while )
+: 기본적인 내용은 다 똑같음
+>break 레이블 사용
+: 레이블을 사용한 break는 가장 근접한 하나의 반복문을 벗어나는 것이 아닌 레이블이 걸린 반복문을 탈출한다.
+ex.
+outer: for(~){
+	for(~){
+		break outer;
+	        }
+	       }
