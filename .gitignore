@@ -1,3 +1,12 @@
-# 모든 학습용 파일 무시
+# 모든 학습용 파일
 *.pdf
 *.pptx
+
+# IntelliJ 프로젝트 세팅 파일(.idea)
+.idea/
+
+# .gitignore 참고 자료
+# 1. Tool 별로 필요한 ignore 항목, github repo
+# https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+# 2. 기본 사용에 대한 블로그
+# https://zoosso.tistory.com/835
