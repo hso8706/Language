@@ -7,5 +7,6 @@
 
 - Project 창으로 커서 이동  
 `Alt + 1`
+
 - 한 줄 복사  
 `Ctrl + D`
