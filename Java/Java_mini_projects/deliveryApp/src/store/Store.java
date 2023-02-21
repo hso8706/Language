@@ -19,4 +19,8 @@ public class Store {
     public Menu getMenu(int num) {
         return menu[num-1];
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

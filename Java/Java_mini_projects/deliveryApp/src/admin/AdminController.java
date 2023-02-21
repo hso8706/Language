@@ -34,13 +34,38 @@ public class AdminController{
             userInput = sc.nextInt();
         }
         selectedStore = AdminDatabase.getStore(userInput);
-        System.out.println("선택 점포 : " + selectedStore.getName());
-        System.out.println("메뉴 정보");
-        for (int i = 1; i <= 3; i++) {
-            System.out.println((i) + ". 메뉴명 : " + selectedStore.getMenu(i).getName() + "// 가격 : " + selectedStore.getMenu(i).getPrice() + "// 재고 : " + selectedStore.getMenu(i).getStock() + "//");
+
+        out: while(true){
+            System.out.println("선택 점포 : " + selectedStore.getName());
+            System.out.println("메뉴 정보");
+            for (int i = 1; i <= 3; i++) {
+                System.out.println((i) + ". 메뉴명 : " + selectedStore.getMenu(i).getName() + " || 가격 : " + selectedStore.getMenu(i).getPrice() + " || 재고 : " + selectedStore.getMenu(i).getStock() + " ||");
+            }
+            System.out.println("------------------------------------");
+            System.out.println("옵션 선택\n1. 점포 이름 수정\n2. 메뉴 정보 수정\n3. 종료");
+
+            System.out.print("옵션 입력 : ");
+            switch (sc.nextInt()){
+                case 1: updateStore();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break out;
+                default:
+                    System.out.println("Error");
+                    break;
+            }
         }
+
     }
-    public void post(){}
+    public void updateStore(){
+        System.out.print("점포명 수정\n입력 : ");
+        sc.nextLine();
+        String newName = sc.nextLine();
+        selectedStore.setName(newName);
+        System.out.println(selectedStore.getName());
+    }
     public void get(){}
     public void patch(){}
     public void delete(){}
