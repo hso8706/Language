@@ -11,7 +11,7 @@ public class Database {
     }
 
     public static Store getStore(int num) {
-        return store[num-1];
+            return store[num-1];
     }
     public static User getUser(int num) {
         return users[num-1];

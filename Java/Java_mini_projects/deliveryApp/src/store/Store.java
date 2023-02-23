@@ -5,6 +5,7 @@ import menu.Menu;
 public class Store {
     private String name;
     private Menu[] menu = new Menu[3];
+
     public Store() {
         this.name = "Blank";
         for (int i = 0; i < 3; i++) {

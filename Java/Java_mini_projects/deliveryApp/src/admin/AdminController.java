@@ -20,6 +20,7 @@ public class AdminController{
     }
     //점포 안내 메세지
     public void inform(){
+
         System.out.println("[시스템] Admin 권한을 선택하셨습니다.");
         System.out.println("---------점포 안내---------");
         System.out.println("1. " + Database.getStore(1).getName());
@@ -72,6 +73,7 @@ public class AdminController{
 
     private void updateMenu() {
         System.out.println("메뉴를 선택하여 주세요");
+        System.out.print("입력 : ");
         int selectedMenuNum = sc.nextInt();
         while(selectedMenuNum <= 0 || selectedMenuNum >= 4){
             System.out.println("올바른 번호를 입력해주십시오.");
