@@ -11,10 +11,11 @@ public class DeliveryApp_V1 {
         Scanner sc = new Scanner(System.in);
         int userInput = -1;
 
-        System.out.println("====================DeliveryApp_V1====================\n");
-        System.out.println("[시스템] 접근 권한을 설정하십시오.");
-        System.out.println("| 1. Admin | 2. User | 3. Exit |");
+
         exit: while(true){
+            System.out.println("\n====================DeliveryApp_V1====================\n");
+            System.out.println("[시스템] 접근 권한을 설정하십시오.");
+            System.out.println("| 1. Admin | 2. User | 3. Exit |");
             System.out.print("입력 : ");
             userInput = sc.nextInt();
             switch (userInput){
